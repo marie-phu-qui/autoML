@@ -1,5 +1,8 @@
 import pandas as pd
+
+from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+
 
 class AutoML :
     def __init__(self, dataset, target):
@@ -30,12 +33,37 @@ class AutoML :
     def preprocess(self):
         data = self.dataset
         target = self.target
-        print(data[target][0])
-        print(data.head())
+
+        y = data[target]
+        X = data.loc[:, data.columns != target]
+
+        # get_dummies sur variables catégorielles 
+        data_dummied = X.copy()
+        data_dummied = pd.get_dummies(data_dummied, drop_first=True)
+
+        # selectione les colonnes à scaler
+        col_names = data_dummied.columns
+        features = data_dummied[col_names]
+        scaler = StandardScaler().fit_transform(features.values)
+        # apply to data
+        data_dummied[col_names] = scaler
+
+        # utilise seulement les colonnes corrélées à plus de 80% à la target
+        correlation = data_dummied.corr()
+        print(data_dummied)
+        print(correlation)
+
+    def predict_reg(self):
+        data = self.dataset
+        target = self.target
+    
+    def predict_classifier(self):
+        data = self.dataset
+        target = self.target
 
 
 data = pd.read_csv("CRIME_NZ.csv")
 target = "Value"
 
 automl = AutoML(data, target)
-print(automl.reduce_data_size())
+print(automl.preprocess())
