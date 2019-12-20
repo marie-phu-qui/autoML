@@ -16,9 +16,9 @@ def test_answer():
 
 x_reg = [0, 1, 2, 3, 5]
 y_reg = [0, 2, 4, 6, 10]
-data = pd.Dataframe(x_reg, y_reg)
-automl = AutoML(data)
-reduce_data_size = AutoML.reduce_data_size(data)
+data = pd.Dataframe((x_reg, y_reg), columns=['x', 'y'])
+automl = AutoML(data, 'y')
+reduce_data_size = AutoML.reduce_data_size()
 
 
 def test_reduce():
@@ -27,7 +27,7 @@ def test_reduce():
 # importer AutoML preprocess method :
 
 
-preprocess = AutoML.preprocess(data)
+preprocess = AutoML.preprocess()
 
 
 def preprocess():
