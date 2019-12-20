@@ -16,7 +16,7 @@ def test_answer():
 
 x_reg = [0, 1, 2, 3, 5]
 y_reg = [0, 2, 4, 6, 10]
-data = pd.DataFrame((x_reg, y_reg), columns=['x', 'y'])
+data = pd.DataFrame([x_reg, y_reg], columns=['x', 'y'])
 automl = AutoML(data, 'y')
 
 
