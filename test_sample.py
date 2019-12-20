@@ -23,17 +23,14 @@ automl = AutoML(data, 'y')
 # importer AutoML reduce_data_size method :
 
 
-reduce_data_size = automl.reduce_data_size()
-
-
 def test_reduce():
+    reduce_data_size = automl.reduce_data_size()
     assert len(reduce_data_size) != 0
 
 # importer AutoML preprocess method :
 
 
-preprocess = automl.preprocess()
-
-
 def test_preprocess():
-    assert preprocess.dtypes != 'object'
+    preprocess = automl.preprocess()
+    object_type = preprocess.select_dtypes(include=['object']).columns.tolist()
+    assert len(object_type) == 0
