@@ -13,7 +13,7 @@ def test_answer():
 # importer AutoML reduce_data_size method :
 
 
-data = pd.read_csv("CRIME_NZ.csv")
+data = [0, 1, 2, 3, 5]
 reduce_data_size = AutoML.reduce_data_size(data)
 
 
