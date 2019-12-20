@@ -49,7 +49,8 @@ class AutoML :
         data_dummied[col_names] = scaler
 
         # utilise seulement les colonnes corrélées à plus de 80% à la target
-        correlation = data_dummied.corr()
+        df_corr = pd.concat([data_dummied, y])
+        correlation = df_corr.corr()
         print(data_dummied)
         print(correlation)
 
