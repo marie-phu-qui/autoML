@@ -3,10 +3,13 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
+
 class AutoML:
+
     def __init__(self, dataset, target):
         self.dataset = dataset
         self.target = target
+
     def reduce_data_size(self):
         data = self.dataset
     # Prendre toutes les variables de type int
@@ -57,7 +60,7 @@ class AutoML:
     def predict_reg(self):
         data = self.dataset
         target = self.target
-    
+
     def predict_classifier(self):
         data = self.dataset
         target = self.target
