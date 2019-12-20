@@ -3,8 +3,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
-
-class AutoML :
+class AutoML:
     def __init__(self, dataset, target):
         self.dataset = dataset
         self.target = target
