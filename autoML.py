@@ -53,6 +53,7 @@ class AutoML :
         correlation = df_corr.corr()
         print(data_dummied)
         print(correlation)
+        return data_dummied
 
     def predict_reg(self):
         data = self.dataset
