@@ -37,4 +37,4 @@ preprocess = automl.preprocess()
 
 def test_preprocess():
     print(preprocess.dtypes)
-    assert True
+    # assert preprocess.dtypes
