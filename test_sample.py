@@ -28,11 +28,6 @@ def tet_reduce_not_empty():
     assert len(reduce_data_size.keys()) > 0
 
 
-def test_reduce_type():
-    reduce_data_size = automl.reduce_data_size()
-    assert reduce_data_size is dict
-
-
 # importer AutoML preprocess method :
 
 
