@@ -57,8 +57,6 @@ class AutoML:
         # utilise seulement les colonnes corrélées à plus de 80% à la target
         df_corr = pd.concat([data_dummied, y])
         correlation = df_corr.corr()
-        print(data_dummied)
-        print(correlation)
         return data_dummied
 
     def predict_reg(self):
