@@ -72,4 +72,4 @@ data = pd.read_csv("CRIME_NZ.csv")
 target = "Value"
 
 automl = AutoML(data, target)
-print(automl.preprocess())
+print(automl.reduce_data_size())
