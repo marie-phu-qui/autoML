@@ -13,7 +13,8 @@ def test_answer():
 # importer AutoML reduce_data_size method :
 
 
-reduce_data_size = AutoML.reduce_data_size()
+data = pd.read_csv("CRIME_NZ.csv")
+reduce_data_size = AutoML.reduce_data_size(data)
 
 
 def test_reduce():
@@ -22,8 +23,9 @@ def test_reduce():
 # importer AutoML preprocess method :
 
 
-preprocess = AutoML.preprocess()
+preprocess = AutoML.preprocess(data)
 
 
 def preprocess():
-    assert len(preprocess) != 0
+    print(preprocess.dtypes())
+    assert preprocess.dtypes()
