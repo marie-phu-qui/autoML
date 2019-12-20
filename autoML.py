@@ -11,6 +11,8 @@ class AutoML:
         self.target = target
 
     def reduce_data_size(self):
+        ''' returns a dictionary of reduced dtypes to be applied on dataset '''
+
         data = self.dataset
     # Prendre toutes les variables de type int
         list_int64 = data.select_dtypes(include=['int64']).columns.tolist()
@@ -33,6 +35,8 @@ class AutoML:
         return dict_dtypes
 
     def preprocess(self):
+        ''' returns a non categorical dataset '''
+
         data = self.dataset
         target = self.target
 
