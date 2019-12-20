@@ -1,4 +1,5 @@
 from autoML import AutoML
+import pandas as pd
 
 # content of test_sample.py
 
@@ -13,7 +14,10 @@ def test_answer():
 # importer AutoML reduce_data_size method :
 
 
-data = [0, 1, 2, 3, 5]
+x_reg = [0, 1, 2, 3, 5]
+y_reg = [0, 2, 4, 6, 10]
+data = pd.Dataframe(x_reg, y_reg)
+automl = AutoML(data)
 reduce_data_size = AutoML.reduce_data_size(data)
 
 
