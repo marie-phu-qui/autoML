@@ -23,7 +23,7 @@ automl = AutoML(data, 'y')
 # importer AutoML reduce_data_size method :
 
 
-reduce_data_size = autoML.reduce_data_size()
+reduce_data_size = automl.reduce_data_size()
 
 
 def test_reduce():
@@ -32,7 +32,7 @@ def test_reduce():
 # importer AutoML preprocess method :
 
 
-preprocess = autoML.preprocess()
+preprocess = automl.preprocess()
 
 
 def preprocess():
