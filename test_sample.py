@@ -35,6 +35,6 @@ def test_reduce():
 preprocess = automl.preprocess()
 
 
-def preprocess():
+def test_preprocess():
     print(preprocess.dtypes())
-    assert preprocess.dtypes()
+    assert True
