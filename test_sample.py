@@ -23,14 +23,15 @@ automl = AutoML(data, 'y')
 # importer AutoML reduce_data_size method : 
 
 
-def test_reduce_exist():
+def tet_reduce_not_empty():
     reduce_data_size = automl.reduce_data_size()
-    assert len(reduce_data_size) != 0
+    assert len(reduce_data_size.keys()) > 0
 
 
 def test_reduce_type():
     reduce_data_size = automl.reduce_data_size()
-    assert type(reduce_data_size) == 'dict'
+    assert reduce_data_size is dict
+
 
 # importer AutoML preprocess method :
 
