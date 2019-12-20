@@ -11,13 +11,18 @@ def inc(x):
 def test_answer():
     assert inc(3) == 4
 
-# importer AutoML reduce_data_size method :
+# Create mock data set for regression case :
 
 
 x_reg = [0, 1, 2, 3, 5]
 y_reg = [0, 2, 4, 6, 10]
-data = pd.Dataframe((x_reg, y_reg), columns=['x', 'y'])
+data = pd.DataFrame((x_reg, y_reg), columns=['x', 'y'])
 automl = AutoML(data, 'y')
+
+
+# importer AutoML reduce_data_size method :
+
+
 reduce_data_size = AutoML.reduce_data_size()
 
 
